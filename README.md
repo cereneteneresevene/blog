@@ -1,3 +1,7 @@
+## Açıklama
+
+Next.js, Frame Motion ve Tailwind CSS kullanarak statik bir blog sitesi geliştirmek. Bu site, farklı blog yazılarını listeler ve kullanıcıların her bir blog yazısının detaylarını görüntülemelerini sağlar.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
