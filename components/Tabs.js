@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Tabs = () => {
   const searchParams = useSearchParams()
@@ -20,15 +21,29 @@ const Tabs = () => {
         url: "suggestion",
     },
   ]
+  
   return (
-    <div className='p-5 m-5 bg-gray-100 dark bg-purple-700 flex items-center justify-center gap-7 '>
+    <div className='p-5 m-5 bg-purple-400 dark:bg-purple-700 flex items-center justify-center gap-7 mx-36'>
         {
-            tabs.map((tab,i)=>(
-                <Link className={`cursor-pointer hover:opacity-80 transition-opacity ${tab.url === genre ? "underline underline-offset-8 text-orange-600" : ""}`} href={`/?genre=${tab.url}`}>{tab.name}</Link>
+            tabs.map((tab, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ scale: 1 }}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <Link 
+                    className={`cursor-pointer hover:opacity-80 transition-opacity ${tab.url === genre ? "underline underline-offset-8 text-orange-600" : ""}`} 
+                    href={`/?genre=${tab.url}`}
+                  >
+                    {tab.name}
+                  </Link>
+                </motion.div>
             ))
         }
     </div>
   )
 }
 
-export default Tabs
+export default Tabs;

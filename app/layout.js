@@ -1,21 +1,31 @@
-import "./globals.css";
-import React from 'react'
+// "use client"; // Bu satırı kaldırın
+
+import React from "react";
 import Header from "@/components/Header";
+import './globals.css';
 import Providers from "./Providers";
 import Tabs from "@/components/Tabs";
+import ScrollProgress from "@/components/ScrollProgress";
 
-const Layout = ({children}) => {
-  return (
-    <html>
-      <body>
-        <Providers>
-          <Header/>
-          <Tabs/>
-          {children}
-        </Providers>
-      </body>
-    </html>
-  )
+export const metadata = {
+    title: 'BLOG',
+    description: 'This is the global description for Blog',
+    keywords: 'blog, app, entertainment',
+};
+
+const Layout = ({ children }) => {
+    return (
+        <html lang='en'>
+            <body>
+                <Providers>
+                    <Header />
+                    <ScrollProgress/>
+                    <Tabs/>
+                    {children}
+                </Providers>
+            </body>
+        </html>
+    );
 }
 
-export default Layout
+export default Layout;
